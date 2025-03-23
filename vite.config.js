@@ -4,5 +4,5 @@ import { ESLint } from "eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), ESLint],
+  plugins: [react(),new ESLint],
 });
