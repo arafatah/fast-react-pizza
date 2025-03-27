@@ -30,7 +30,8 @@ function Button({ children, disabled, to, type, onClick }) {
     <button disabled={disabled} className={styles[type]}>
       {children}
     </button>
-  );
+  ); 
 }
 
 export default Button;
+ 
