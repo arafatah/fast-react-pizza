@@ -23,6 +23,7 @@ function CreateOrder() {
     status: addressStatus,
     position,
     address,
+    error: errorAddress,
   } = useSelector((state) => state.user);
   const isLoadingAddress = addressStatus === "loading";
 
@@ -79,19 +80,26 @@ function CreateOrder() {
               defaultValue={address}
               required
             />
+            {addressStatus === "error" && (
+              <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
+                {errorAddress}
+              </p>
+            )}
           </div>
-          <span className="absolute right-[3px] z-20">
-            <Button
-              disabled={isLoadingAddress}
-              type="small"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(fetchAddress());
-              }}
-            >
-              Get Position
-            </Button>
-          </span>
+          {!position.latitude && !position.longitude && (
+            <span className="absolute right-[3px] z-20 md:right-[5px] md:top-[5px]">
+              <Button
+                disabled={isLoadingAddress}
+                type="small"
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(fetchAddress());
+                }}
+              >
+                Get Position
+              </Button>
+            </span>
+          )}
         </div>
 
         <div className="mb-12 flex items-center gap-5">
@@ -110,7 +118,16 @@ function CreateOrder() {
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <Button type="primary" disabled={isSubmitting}>
+          <input
+            type="hidden"
+            name="position"
+            value={
+              position.longitude && position.latitude
+                ? `${position.latitude},${position.longitude}`
+                : ""
+            }
+          />
+          <Button type="primary" disabled={isSubmitting || isLoadingAddress}>
             {isSubmitting
               ? "Placing order..."
               : `Order now from ${formatCurrency(totalPrice)}`}
