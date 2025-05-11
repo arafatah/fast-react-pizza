@@ -1,17 +1,16 @@
 # Forkify App
 
-![Forkify Logo](https://github.com/CodeWithAlamin/Forkify-Recipe-App/raw/main/src/img/favicon.png)
+![Forkify Logo]()
 
 ![Version](https://img.shields.io/badge/version-2.0.0-blue.svg?cacheSeconds=2592000)
 ![Demo](https://img.shields.io/badge/demo-online-green.svg)
 ![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)
 ![Maintained](https://img.shields.io/badge/maintained-yes-green.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Twitter Follow](https://img.shields.io/twitter/follow/CodeWithAlamin.svg?style=social)
 
 ## 🚀 Live Demo
 
-👉 [Check out the live Forkify App here](https://forkify-alamin.netlify.app/)
+👉 [Check out the live Forkify App here](https://forkify-by-arafat.netlify.app/)
 
 ## 📖 Description
 
@@ -67,4 +66,4 @@ Follow these steps to run the app locally:
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/CodeWithAlamin/Forkify-Recipe-App.git
+git clone https://github.com/CodeWith/Forkify-Recipe-App.git
